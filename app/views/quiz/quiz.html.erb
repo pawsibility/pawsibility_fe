@@ -1,0 +1,21 @@
+<h1>Check Out All Your Pawsibilities!!</h1>
+<hr><br><br>
+
+<%= form_with(url: "/quiz_results", local: true) do |f| %>
+  <%= f.label :weight, "Would you like a dog that can squish you?" %><br>
+  <%= f.radio_button :weight, "Yes" %>
+  <%= f.label :weight_yes, "Yes" %><br>
+  <%= f.radio_button :weight, "No" %>
+  <%= f.label :weight_no, "No" %><br><br>
+  <%= f.label :shedding, "On a scale of 0-5, how often do you like to vacuum? 0 - never, 5 - twice a day." %><br>
+  <%= f.number_field :shedding, in: 0..5, step: 1, :required => true %><br><br>
+  <%= f.label :barking, "On a scale of 0-5, how much would you like to annoy your neighbors with dog barking?" %><br>
+  <%= f.number_field :barking, in: 0..5, step: 1, :required => true %><br><br>
+  <%= f.label :energy, "Please rate the energy level of your ideal dog. 0 - you're a lazy person who doesn't get off the couch, 5 - you're a very annoying human who can't sit still and your dog is the same." %><br>
+  <%= f.number_field :energy, in: 0..5, step: 1, :required => true %><br><br>
+  <%= f.label :protectiveness, "Please rate the protectiveness of your ideal dog: 0 - you want a dog who doesn't care about you, 5 - you want to feel safe." %><br>
+  <%= f.number_field :protectiveness, in: 0..5, step: 1, :required => true %><br><br>
+  <%= f.label :trainability, "Please rate the trainability of your ideal dog: 0 - I want my dog to do whatever it wants and I want all of my friends to judge me for it, 5 - I want my dog to make me coffee in the morning." %><br>
+  <%= f.number_field :trainability, in: 0..5, step: 1, :required => true %><br><br><br>
+  <%= f.submit "Find your furever friend!" %>
+<% end %>

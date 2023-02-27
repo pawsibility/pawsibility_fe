@@ -1,0 +1,14 @@
+<center>
+<% if @results.class != Array %>
+  <% cats = ["https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTAxYTZmNDg5N2E3YjI1MjZlZmU2NGNlOWE5YTRiYjA3NWMyYjJmOSZjdD1n/CqVNwrLt9KEDK/giphy.gif", "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTk3ZGM1ZDA1NjRiNjRhOTA0ZTE4YTY1MmFlYzI4MDRkMWFlNWJmNiZjdD1n/13CoXDiaCcCoyk/giphy.gif", "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGFjNjM5ODI3NjMzNjhkNDYyNTZhYjZkMWVjNjg2NGUwMjYxY2YzNSZjdD1n/118lTJFyUJYyze/giphy.gif", "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmE1MjE5MjgzMjA0OGUxZjYyNzBkYjI4MDVkM2M4MGZmNWE2ZGNiOCZjdD1n/mlvseq9yvZhba/giphy.gif"] %>
+  <%= image_tag(cats.sample) %><br>
+  <h2><%= @results %></h2>
+<% else %>  
+  <h1>We have fetched <%= @results.count %> Pawsibilities!</h1>
+  <hr><br><br>
+  <% @results.each do |r| %>
+    <%= image_tag(r[:url]) %><br>
+    <h2><%= r[:name] %></h2><br><br>
+  <% end %>
+<% end %>
+</center>
